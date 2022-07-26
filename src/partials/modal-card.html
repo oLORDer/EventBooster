@@ -1,8 +1,8 @@
-<div class="modal">
+<div class="modal is-hidden">
   <div class="modal__window">
     <button class="modal__close-btn" type="button">
-      <svg class="modal__close-icon" width="30" height="30">
-        <use href="#"></use>
+      <svg class="modal__close-icon" width="17" height="17">
+        <use href="./images/sprite.svg#icon-close"></use>
       </svg>
     </button>
     <picture class="modal__img">
@@ -15,9 +15,18 @@
       <img src="./images/modal-card/mobile/rectangle.jpg" alt="logo-artist">
     </picture>
     <ul class="modal__list">
+      <li class="modal__item-img">
+        <picture class="modal__item-poster">
+          <source srcset="./images/modal-card/desktop/poster.jpg 1x, ./images/modal-card/desktop/poster@2x.jpg 2x"
+            media="(min-width: 1200px)">
+          <source srcset="./images/modal-card/tablet/poster.jpg 1x, ./images/modal-card/tablet/poster@2x.jpg 2x"
+            media="(min-width: 768px)">
+          <img src="./images/modal-card/tablet/poster.jpg" alt="logo-artist">
+        </picture>
+      </li>
       <li class="modal__item">
         <h2 class="modal__title">Info</h2>
-        <p>Atlas Weekend is the largest music festival in Ukraine.
+        <p class="modal__text">Atlas Weekend is the largest music festival in Ukraine.
           More than 200 artists will create a proper music festival atmosphere on 10 stages</p>
       </li>
       <li class="modal__item">
@@ -36,9 +45,17 @@
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Prices</h2>
-        <p class="modal__text">Standart 300-500 UAH</p>
+        <p class="modal__text-wrapper">
+          <svg class="modal__text-ticket" width="24" height="16">
+            <use href="./images/sprite.svg#icon-ticket"></use>
+          </svg>
+          Standart 300-500 UAH</p>
         <button class="modal__buy-btn">Buy tickets</button>
-        <p class="modal__text">VIP 1000-1500 UAH</p>
+        <p  class="modal__text-wrapper">
+          <svg class="modal__text-ticket" width="24" height="16">
+            <use href="./images/sprite.svg#icon-ticket"></use>
+          </svg>
+          VIP 1000-1500 UAH</p>
         <button class="modal__buy-btn">Buy tickets</button>
       </li>
     </ul>
