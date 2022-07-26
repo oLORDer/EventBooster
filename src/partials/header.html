@@ -1,17 +1,25 @@
 <header class="header">
-  <div class="logo-container">
-    <img src="./images/logo.png" alt="logo" width="60">
+<div class="container">
+  <div class="logo-bg">
+    <svg class="logo" width="70" height="30">
+      <use href="./images/sprite.svg#icon-logo"></use>
+    </svg>
   </div>
   <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
+
+  <div class="input-container">
+    <input class="search-input input" type="text">
+    <input class="country-input input" name="city" list="cities" />
+    <datalist id="cities">
+      <option value="Naples" name="uk" />
+      <option value="London" />
+      <option value="Berlin" />
+      <option value="New York" />
+      <option value="Frattamaggiore" />
+    </datalist>
+  </div>
+</div>
 </header>
 
 
 
-<input class="inp" name="city" list="cities" />
-<datalist id="cities">
-  <option value="Naples" name="uk" />
-  <option value="London" />
-  <option value="Berlin" />
-  <option value="New York" />
-  <option value="Frattamaggiore" />
-</datalist>
