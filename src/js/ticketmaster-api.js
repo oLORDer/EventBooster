@@ -5,7 +5,7 @@ export class TicketmasterAPI {
   #BASE_URL = 'https://app.ticketmaster.com/discovery/v2/events';
 
   constructor() {
-    this.searchQuery;
+    this.searchQuery = 'summer';
     this.searchCountry = 'US';
     this.page = 0;
     this.size = 16;
