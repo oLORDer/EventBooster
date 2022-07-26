@@ -1,0 +1,14 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include mq($tablet) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include mq($desktop) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
