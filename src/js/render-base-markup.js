@@ -8,11 +8,11 @@ import { paginal } from './paginal';
 const ticketmasterAPI = new TicketmasterAPI();
 
 const galleryEl = document.querySelector('.gallery');
-const searchQueryEl = document.querySelector('.search-input');
+const searchQueryEl = document.querySelector('.js-serch-query');
 const searchCountryEl = document.querySelector('.country-input');
 
 renderBaseMarkup();
-// searchQueryEl.addEventListener('submit', onSerchQuerySubmit);
+searchQueryEl.addEventListener('submit', onSerchQuerySubmit);
 // searchCountryEl.addEventListener('change', onSerchCountryChange);
 
 // function onSerchCountryChange() {
@@ -20,11 +20,11 @@ renderBaseMarkup();
 //   renderBaseMarkup();
 // }
 
-// function onSerchQuerySubmit(e) {
-//   e.preventDefault();
-//   ticketmasterAPI.searchQuery = searchQueryEl.value;
-//   renderBaseMarkup();
-// }
+function onSerchQuerySubmit(e) {
+  e.preventDefault();
+  ticketmasterAPI.searchQuery = e.currentTarget.elements.serchQuery.value;
+  renderBaseMarkup();
+}
 
 async function renderBaseMarkup() {
   try {
