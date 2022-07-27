@@ -21,10 +21,10 @@
   background-image: url('../images/modal-card/mobile/noise-body.png');
 
   @media screen and (min-device-pixel-ratio: 2),
-  screen and (-webkit-min-device-pixel-ratio: 2),
-  screen and (-o-min-device-pixel-ratio: 2/1),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
+    screen and (-webkit-min-device-pixel-ratio: 2),
+    screen and (-o-min-device-pixel-ratio: 2/1),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
     background-image: url('../images/modal-card/mobile/noise-body@2x.png');
   }
 }
@@ -45,7 +45,7 @@
 
   text-align: center;
 
-  background: #FFF2FD;
+  background: #fff2fd;
   border-radius: 150px 0px;
 
   @include mq(tablet) {
@@ -81,8 +81,8 @@
 }
 
 .modal__close-icon {
-
-  &:hover, :focus {
+  &:hover,
+  :focus {
     fill: rgba(76, 0, 254, 1);
   }
 
@@ -94,6 +94,7 @@
 
 .modal__img img {
   border-radius: 50%;
+  object-fit: cover;
 
   @include mq(tablet) {
     width: 70px;
@@ -151,6 +152,7 @@
   }
 
   &-poster img {
+    object-fit: cover;
     width: 249px;
     height: 445px;
 
@@ -158,7 +160,6 @@
       width: 427px;
       height: 664px;
     }
-
   }
 }
 
@@ -170,7 +171,7 @@
   line-height: 1.2;
   text-transform: uppercase;
 
-  color: #DC56C5;
+  color: #dc56c5;
 
   @include mq(desktop) {
     font-size: 24px;

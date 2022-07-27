@@ -1,7 +1,7 @@
 'use strict';
 
 export function ticketMarkup(el) {
-  return `<li class= "gallery__item">
+  return `<li data-id="${el.id}" class= "gallery__item">
 
   <div class="">
     <picture>
