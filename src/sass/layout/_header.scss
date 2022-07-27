@@ -1,14 +1,27 @@
 .header {
+  
   position: relative;
   padding-top: 80px;
   padding-bottom: 112px;
   margin: 0 auto;
-  background: url(../images/header/bg-mobile@x1.jpg) center center/cover
-    no-repeat;
+  background-image:linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0) 0%,
+    rgba(14, 14, 14, 0.8)100%
+  ),url(../images/header/overlay-mobile@1x.png),url(../images/header/bg-mobile@x1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @include mq(retina) {
-    background: url(../images/header/bg-mobile@x2.jpg) center center/cover
-      no-repeat;
+    background:linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0) 0%,
+      rgba(14, 14, 14, 0.8)100%
+    ),url(../images/header/overlay-mobile@2x.png),url(../images/header/bg-mobile@x2.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
   }
 
   @include mq(mobile) {
@@ -19,26 +32,52 @@
     width: 768px;
     padding-top: 40px;
     padding-bottom: 170px;
-    background: url(../images/header/bg-tablet@x1.jpg) center center/cover
-      no-repeat;
+    background-image:linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0) 0%,
+      rgba(14, 14, 14, 0.8)100%
+    ),url(../images/header/tablet-overlay@1x.png),url(../images/header/bg-tablet@x1.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+  }
 
     @include mq(retina) {
-      background: url(../images/header/bg-tablet@x2.jpg) center center/cover
-        no-repeat;
+      background-image:linear-gradient(
+        180deg,
+        rgba(13, 13, 13, ) 0%,
+        rgba(14, 14, 14, 0.8)100%
+      ),url(../images/header/tablet-overlay@2x.png),url(../images/header/bg-tablet@x2.jpg);
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
     }
-  }
+
 
   @include mq(desktop) {
     width: 1280px;
-    background: url(../images/header/bg-desktop@x1.jpg) center center/cover
-      no-repeat;
+    background-image:linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0.19) 0%,
+      rgba(14, 14, 14, 0.8)100%
+    ),url(../images/header/desktop-overlay@1x.png),url(../images/header/bg-desktop@x1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     @include mq(retina) {
-      background: url(../images/header/bg-desktop@x2.jpg) center center/cover
-        no-repeat;
+      background-image:linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0.19) 0%,
+        rgba(14, 14, 14, 0.8)100%
+      ),url(../images/header/desktop-overlay@2x.png),url(../images/header/bg-desktop@x2.jpg);
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat; 
     }
   }
-}
+}  
+
 
 .logo-bg {
   position: absolute;
@@ -48,11 +87,9 @@
   height: 89px;
   padding-top: 19px;
   border-bottom-right-radius: 100%;
-  background: linear-gradient(
-    136deg,
-    rgba(196, 196, 196, 0.3) 10.75%,
-    rgba(196, 196, 196, 0) 92.33%
-  );
+  background:linear-gradient(136.07deg,
+   rgba(196, 196, 196, 0.03) -27.57%,
+  rgba(196, 196, 196, 0) 135.6%);
   backdrop-filter: blur(30px);
 
   @include mq(tablet) {
