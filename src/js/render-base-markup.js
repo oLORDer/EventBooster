@@ -1,6 +1,7 @@
 'use strict';
 
 import { ticketMarkup } from '../templates/gallery';
+import { ticketModal } from '../templates/modal-card';
 import { TicketmasterAPI } from './ticketmaster-api';
 import { paginal } from './paginal';
 
@@ -35,6 +36,27 @@ async function renderBaseMarkup() {
       .join('');
 
     galleryEl.innerHTML = baseMarkup;
+    galleryEl.addEventListener('click', onTargetElementClick);
+
+    async function onTargetElementClick(e) {
+      try {
+        if (!e.target.classList.contains('js-target')) {
+          return;
+        }
+        const response = await ticketmasterAPI.fetchTickets();
+        console.log(response);
+        const modalCardMarkup = response._embedded.events
+          .map(el => {
+            return ticketModal(el);
+          })
+          .join('');
+
+        // bodyEl.innerHTML = modalCardMarkup;
+        document.body.insertAdjacentHTML('beforeend', modalCardMarkup);
+      } catch (err) {
+        console.log(err);
+      }
+    }
 
     paginal(
       response.page.totalElements,

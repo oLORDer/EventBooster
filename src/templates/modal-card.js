@@ -1,4 +1,7 @@
-<div class="modal is-hidden">
+'use strict';
+
+export function ticketModal(el) {
+  return `<div class="modal">
   <div class="modal__window">
     <button class="modal__close-btn" type="button">
       <svg class="modal__close-icon" width="17" height="17">
@@ -8,67 +11,43 @@
     <picture class="modal__img">
       <source
         srcset="
-          ./images/modal-card/desktop/rectangle.jpg    1x,
-          ./images/modal-card/desktop/rectangle@2x.jpg 2x
+        ${el.images[0].url} 1x,
+        ${el.images[0].url} 2x
         "
-        media="(min-width: 1200px)"
       />
-      <source
-        srcset="
-          ./images/modal-card/tablet/rectangle.jpg    1x,
-          ./images/modal-card/tablet/rectangle@2x.jpg 2x
-        "
-        media="(min-width: 768px)"
-      />
-      <source
-        srcset="
-          ./images/modal-card/mobile/rectangle.jpg    1x,
-          ./images/modal-card/mobile/rectangle@2x.jpg 2x
-        "
-        media="(max-width: 767px)"
-      />
-      <img src="./images/modal-card/mobile/rectangle.jpg" alt="logo-artist" />
+      <img src="${el.images[0].url}" alt="logo-artist" />
     </picture>
     <ul class="modal__list">
       <li class="modal__item-img">
         <picture class="modal__item-poster">
           <source
             srcset="
-              ./images/modal-card/desktop/poster.jpg    1x,
-              ./images/modal-card/desktop/poster@2x.jpg 2x
+            ${el.images[0].url} 1x,
+            ${el.images[0].url} 2x
             "
-            media="(min-width: 1200px)"
           />
-          <source
-            srcset="
-              ./images/modal-card/tablet/poster.jpg    1x,
-              ./images/modal-card/tablet/poster@2x.jpg 2x
-            "
-            media="(min-width: 768px)"
-          />
-          <img src="./images/modal-card/tablet/poster.jpg" alt="logo-artist" />
+          <img src="${el.images[0].url}" alt="logo-artist" />
         </picture>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Info</h2>
         <p class="modal__text">
-          Atlas Weekend is the largest music festival in Ukraine. More than 200
-          artists will create a proper music festival atmosphere on 10 stages
+        el._embedded.venues[1].generalRule ${el.dates.start.localDate}
         </p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">When</h2>
-        <p class="modal__text">2021-06-09</p>
-        <p class="modal__text">20:00 (Kyiv/Ukraine)</p>
+        <p class="modal__text">${el.dates.start.localDate}</p>
+        <p class="modal__text">${el.dates.start.localTime} (${el.dates.start.timezone})</p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Where</h2>
-        <p class="modal__text">Kyiv, Ukraine</p>
-        <p class="modal__text">VDNH</p>
+        <p class="modal__text">${el.dates.start.timezone}</p>
+        <p class="modal__text">${el._embedded.venues[0].name}</p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Who</h2>
-        <p>The Black Eyed Peas</p>
+        <p>${el.name}</p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Prices</h2>
@@ -76,7 +55,7 @@
           <svg class="modal__text-ticket" width="24" height="16">
             <use href="./images/sprite.svg#icon-ticket"></use>
           </svg>
-          Standart 300-500 UAH
+          el.priceRanges.type el.priceRanges.min-el.priceRanges.max el.priceRanges.currency
         </p>
         <button class="modal__buy-btn blob-btn">
           Buy tickets
@@ -121,3 +100,5 @@
     </button>
   </div>
 </div>
+`;
+}
