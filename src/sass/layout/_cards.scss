@@ -10,7 +10,6 @@ a {
   @include mq(tablet) {
     margin: -16px;
   }
-
 }
 
 .gallery__item {
@@ -53,7 +52,6 @@ a {
     width: 227px;
     height: 212px;
     top: -20px;
-
   }
 }
 
@@ -105,4 +103,8 @@ a {
     font-size: 14px;
     line-height: 1.21;
   }
+}
+
+.js-target {
+  cursor: pointer;
 }
