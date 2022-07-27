@@ -20,7 +20,7 @@ searchQueryEl.addEventListener('submit', onSerchQuerySubmit);
 //   renderBaseMarkup();
 // }
 
-function onSerchQuerySubmit(e) {
+async function onSerchQuerySubmit(e) {
   e.preventDefault();
   ticketmasterAPI.searchQuery = e.currentTarget.elements.serchQuery.value;
   renderBaseMarkup();
@@ -36,23 +36,26 @@ async function renderBaseMarkup() {
       .join('');
 
     galleryEl.innerHTML = baseMarkup;
-    galleryEl.addEventListener('click', onTargetElementClick);
 
-    async function onTargetElementClick(e) {
+    // galleryEl.addEventListener('click', onTargetElementClick);
+
+    let inputs = galleryEl.getElementsByTagName('li');
+    for (let i = 0; i < inputs.length; i += 1) {
+      inputs[i].addEventListener('click', onTargetElementClick);
+    }
+
+    function onTargetElementClick(e) {
       try {
-        if (!e.target.classList.contains('js-target')) {
-          return;
-        }
-        const response = await ticketmasterAPI.fetchTickets();
-        console.log(response);
-        const modalCardMarkup = response._embedded.events
-          .map(el => {
-            return ticketModal(el);
-          })
-          .join('');
+        const modalCardMarkup = () => {
+          for (let i = 0; i < response._embedded.events.length; i += 1) {
+            if (this.dataset.id === response._embedded.events[i].id) {
+              console.log(response._embedded.events[i]);
+              return ticketModal(response._embedded.events[i]);
+            }
+          }
+        };
 
-        // bodyEl.innerHTML = modalCardMarkup;
-        document.body.insertAdjacentHTML('beforeend', modalCardMarkup);
+        document.body.insertAdjacentHTML('beforeend', modalCardMarkup());
       } catch (err) {
         console.log(err);
       }
