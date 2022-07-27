@@ -1,22 +1,31 @@
 <header class="header">
-<div class="container">
-  <div class="logo-bg">
-    <svg class="logo" width="70" height="30">
-      <use href="./images/sprite.svg#icon-logo"></use>
-    </svg>
+  <div class="container">
+<div class="logo-bg">
+  <svg class="logo" width="70" height="30">
+    <use href="./images/sprite.svg#icon-logo"></use>
+  </svg>
   </div>
-  <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
 
+  <h1 class="header__title">FIND BEST EVENTS AROUND THE WORLD</h1>
   <div class="input-container">
-    <input class="search-input input" type="text">
-    <input class="country-input input" name="city" list="cities" />
-    <datalist id="cities">
-      <option value="Naples" name="uk" />
-      <option value="London" />
-      <option value="Berlin" />
-      <option value="New York" />
-      <option value="Frattamaggiore" />
-    </datalist>
+    <div class="search__container">
+      <form class="js-serch-query">
+    <input name = "serchQuery" class="search-input input" type="text" placeholder = "Start searching">
+    <button type="submit" class="search-input__button">    
+      <svg class="search-input__icon" width="15" height="20">
+        <use href="./images/sprite.svg#icon-input-loop"></use>
+    </svg></button>
+  </form>
+  </div>
+  <div class="country__container">
+    <input class="country-input input" name="city" list="cities" placeholder="Choose country">
+    <button type="button" class="country-input__button">
+      <svg class="country-input__icon" width="15" height="10">
+
+          <use href="./images/sprite.svg#icon-input-triangle"></use>
+
+      </svg>
+    </button>
   </div>
 </div>
 </header>

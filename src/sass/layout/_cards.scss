@@ -51,6 +51,7 @@ a {
   @include mq(desktop) {
     width: 227px;
     height: 212px;
+
     top: -14px;
   }
 }
@@ -118,8 +119,12 @@ a {
   }
 }
 
+
 .gallery__icon {
   margin-right: 3px;
   fill: #ffffff;
   transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+.js-target {
+  cursor: pointer;
 }

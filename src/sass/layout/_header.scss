@@ -3,82 +3,129 @@
   padding-top: 80px;
   padding-bottom: 112px;
   margin: 0 auto;
-  background: url(../images/header/bg-mobile@x1.jpg) center center/cover
-    no-repeat;
+  background-image: linear-gradient(
+      180deg,
+      rgba(13, 13, 13, 0) 0%,
+      rgba(14, 14, 14, 0.8) 100%
+    ),
+    url(../images/header/overlay-mobile@1x.png),
+    url(../images/header/bg-mobile@x1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   @include mq(retina) {
-    background: url(../images/header/bg-mobile@x2.jpg) center center/cover
-      no-repeat;
-  }
-
-  @include mq(mobile) {
-    width: 480px;
+    background: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      ),
+      url(../images/header/overlay-mobile@2x.png),
+      url(../images/header/bg-mobile@x2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   @include mq(tablet) {
-    width: 768px;
     padding-top: 40px;
     padding-bottom: 170px;
-    background: url(../images/header/bg-tablet@x1.jpg) center center/cover
-      no-repeat;
+    background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      ),
+      url(../images/header/tablet-overlay@1x.png),
+      url(../images/header/bg-tablet@x1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-    @include mq(retina) {
-      background: url(../images/header/bg-tablet@x2.jpg) center center/cover
-        no-repeat;
-    }
+  @include mq(retina) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      ),
+      url(../images/header/tablet-overlay@1x.png),
+      url(../images/header/bg-tablet@x2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   @include mq(desktop) {
-    width: 1280px;
-    background: url(../images/header/bg-desktop@x1.jpg) center center/cover
-      no-repeat;
+    max-width: 1680;
+    background-image: linear-gradient(
+        180deg,
+        rgba(13, 13, 13, 0.19) 0%,
+        rgba(14, 14, 14, 0.8) 100%
+      ),
+      url(../images/header/desktop-overlay@1x.png),
+      url(../images/header/bg-desktop@x1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     @include mq(retina) {
-      background: url(../images/header/bg-desktop@x2.jpg) center center/cover
-        no-repeat;
+      background-image: linear-gradient(
+          180deg,
+          rgba(13, 13, 13, 0.19) 0%,
+          rgba(14, 14, 14, 0.8) 100%
+        ),
+        url(../images/header/desktop-overlay@1x.png),
+        url(../images/header/bg-desktop@x2.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 }
 
 .logo-bg {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 106px;
-  height: 89px;
-  padding-top: 19px;
-  border-bottom-right-radius: 100%;
+  left: 0%;
+  top: 0%;
+  width: 110px;
+  height: 90px;
   background: linear-gradient(
     136deg,
     rgba(196, 196, 196, 0.3) 10.75%,
     rgba(196, 196, 196, 0) 92.33%
   );
   backdrop-filter: blur(30px);
-
+  border-bottom-right-radius: 100%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   @include mq(tablet) {
-    width: 180px;
+    width: 170px;
     height: 150px;
   }
 
   @include mq(desktop) {
     width: 230px;
-    height: 193px;
-    padding-top: 30px;
+    height: 190px;
   }
 }
 
 .logo {
-  margin-left: 20px;
+  position: absolute;
+  left: 13%;
+  top: 15%;
   fill: #fff;
 
   @include mq(tablet) {
-    width: 120px;
+    width: 150px;
     height: 45px;
+    left: 0%;
+    top: 10%;
   }
 
   @include mq(desktop) {
-    width: 160px;
+    width: 136px;
     height: 70px;
+    left: 7%;
+    top: 15%;
   }
 }
 
@@ -115,31 +162,85 @@
   height: 40px;
   padding: 16px 32px;
   color: #939393;
+  backdrop-filter: blur(20px);
 
   @include mq(mobile) {
     width: 336px;
   }
 }
-
-.search-input {
+.search__container,
+.country__container {
+  margin: 0 auto;
+  position: relative;
+  max-width: 280px;
+  @include mq(tablet) {
+    max-width: 336px;
+  }
+}
+.search__container {
   margin-bottom: 24px;
-
   @include mq(tablet) {
     margin-right: 32px;
   }
 }
 
+.search-input {
+  max-width: 280px;
+  font-size: 16px;
+
+  @include mq(tablet) {
+    max-width: 336px;
+    margin-right: 32px;
+  }
+}
+.search-input__button {
+  position: absolute;
+  top: 10px;
+  right: 32px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.country-input__button {
+  position: absolute;
+  top: 10px;
+  right: 32px;
+  border: none;
+  background-color: transparent;
+}
+
+.search-input__icon,
+.country-input__icon {
+  fill: #939393;
+}
+
 .country-input {
+  max-width: 280px;
+  @include mq(tablet) {
+    max-width: 336px;
+  }
+}
+.search-input::placeholder,
+.country-input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #939393;
 }
 
 .input-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
 
-  // @include mq(tablet) {
-  //   justify-content: space-between;
-  // }
+  @include mq(mobile) {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  @include mq(tablet) {
+    flex-direction: row;
+  }
 }
 
 .paginal {

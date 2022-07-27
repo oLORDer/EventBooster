@@ -1,9 +1,9 @@
 'use strict';
 
 export function ticketMarkup(el) {
-  return `<li class= "gallery__item">
-<a class="" href="">
-  <div>
+  return `<li data-id="${el.id}" class= "gallery__item">
+
+  <div class="">
     <picture>
       <source
         srcset="
@@ -13,18 +13,18 @@ export function ticketMarkup(el) {
         type="image/jpg"
       />
       <img
-      class="gallery__img"
+      class="gallery__img js-target"
         src="${el.images[0].url}"
         alt="фото веб-сайта"
       />
     </picture>
 
     <div class="gallery__wrap">
-      <h2 class="gallery__title"> ${el.name}</h2>
-      <p class="gallery__txt">${el.dates.start.localDate}</p>
+      <h2 class="gallery__title js-target"> ${el.name}</h2>
+      <p class="gallery__txt js-target">${el.dates.start.localDate}</p>
     </div>
   </div>
-</a>
+
 <a class="gallery__link" href="">${el._embedded.venues[0].name}</a>
 </li>
 `;
