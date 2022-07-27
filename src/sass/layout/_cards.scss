@@ -10,7 +10,6 @@ a {
   @include mq(tablet) {
     margin: -16px;
   }
-
 }
 
 .gallery__item {
@@ -52,12 +51,12 @@ a {
   @include mq(desktop) {
     width: 227px;
     height: 212px;
-    top: -20px;
-
+    top: -14px;
   }
 }
 
 .gallery__img {
+  margin-bottom: 8px;
   display: block;
   width: 120px;
   height: 151px;
@@ -86,12 +85,23 @@ a {
   }
 }
 .gallery__title {
+  margin-bottom: 4px;
   font-weight: 700;
   color: #dc56c5;
+
+  @include mq(tablet) {
+    margin-bottom: 8px;
+  }
 }
 .gallery__txt {
+  margin-bottom: 4px;
   font-weight: 400;
   color: #ffffff;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @include mq(tablet) {
+    margin-bottom: 8px;
+  }
 }
 
 .gallery__link {
@@ -100,9 +110,16 @@ a {
   line-height: 1.25;
   text-align: center;
   color: #ffffff;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
   @include mq(tablet) {
     font-size: 14px;
     line-height: 1.21;
   }
+}
+
+.gallery__icon {
+  margin-right: 3px;
+  fill: #ffffff;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
