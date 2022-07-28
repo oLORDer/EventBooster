@@ -92,7 +92,7 @@ $borderW: 2px;
   &__blob {
     position: absolute;
     top: $borderW;
-    width: 100% / $numOfBlobs;
+    width: calc(100% / $numOfBlobs);
     height: 100%;
     background: $cyan;
     border-radius: 100%;
@@ -105,7 +105,7 @@ $borderW: 2px;
 
     @for $i from 1 through $numOfBlobs {
       &:nth-child(#{$i}) {
-        left: ($i - 1) * (120% / $numOfBlobs);
+        left: ($i - 1) * calc(120% / $numOfBlobs);
         transition-delay: ($i - 1) * 0.08s;
       }
     }
@@ -209,7 +209,7 @@ $borderWidth: 1px;
   &__more {
     position: absolute;
     top: $borderWidth;
-    width: 100% / $numOfBlobs;
+    width: calc(100% / $numOfBlobs);
     height: 100%;
     background: $blue;
     border-radius: 100%;
@@ -222,7 +222,7 @@ $borderWidth: 1px;
 
     @for $i from 1 through $numOfBlobs {
       &:nth-child(#{$i}) {
-        left: ($i - 1) * (120% / $numOfBlobs);
+        left: ($i - 1) * calc(120% / $numOfBlobs);
         transition-delay: ($i - 1) * 0.08s;
       }
     }
