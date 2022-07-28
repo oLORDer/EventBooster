@@ -1,5 +1,5 @@
 .header {
-  max-height: 364px;
+  height: 364px;
   position: relative;
   padding-top: 80px;
   padding-bottom: 112px;
@@ -29,7 +29,7 @@
   }
 
   @include mq(tablet) {
-
+    max-height: 364px;
     padding-top: 40px;
     padding-bottom: 170px;
     background-image: linear-gradient(
@@ -59,7 +59,7 @@
 
   @include mq(desktop) {
     max-width: 1680;
-    height: 446px;
+    max-height: 446px;
     background-image: linear-gradient(
         180deg,
         rgba(13, 13, 13, 0.19) 0%,
@@ -348,7 +348,7 @@
   @include mq(desktop) {
 
     font-size: 16px;
-    max-height: 130px;
+    max-height: 100px;
   }
 
 }
