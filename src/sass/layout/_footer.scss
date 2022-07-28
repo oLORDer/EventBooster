@@ -15,3 +15,33 @@
     }
 }
 
+//scroll
+#scrollUp{
+    position: fixed;
+    right: 6px;
+    bottom: 31px;
+    z-index: 1;
+
+    @include mq(tablet) {
+        right: 19px;
+        bottom: 30px;
+    }
+
+    @include mq (desktop) {
+        bottom: 33px;
+    }
+}
+
+.scroll__icon{
+    fill: #dc56c5;
+}
+
+.scroll{
+    opacity: 1;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &_hide{
+        opacity: 0;
+    }
+}
+
