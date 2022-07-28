@@ -9,42 +9,26 @@ export function ticketModal(el) {
         <use href="${sprite}#icon-close"></use>
       </svg>
     </button>
-    <picture class="modal__img">
-      <source
-        srcset="
-        ${el.images[0].url} 1x,
-        ${el.images[0].url} 2x
-        "
-      />
-      <img src="${el.images[0].url}" alt="logo-artist" />
-    </picture>
+    <img class="modal__img" src="${el.images[0].url}" alt="logo" />
     <ul class="modal__list">
       <li class="modal__item-img">
-        <picture class="modal__item-poster">
-          <source
-            srcset="
-            ${el.images[0].url} 1x,
-            ${el.images[0].url} 2x
-            "
-          />
-          <img src="${el.images[0].url}" alt="logo-artist" />
-        </picture>
+        <img class="modal__item-poster" src="${el.images[2].url}" alt="logo" />
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Info</h2>
         <p class="modal__text">
-        el._embedded.venues[1].generalRule ${el.dates.start.localDate}
+        {el._embedded.events.info}
         </p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">When</h2>
         <p class="modal__text">${el.dates.start.localDate}</p>
-        <p class="modal__text">${el.dates.start.localTime} (${el.dates.start.timezone})</p>
+        <p class="modal__text">${el.dates.start.localTime} (${el.dates.timezone})</p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Where</h2>
-        <p class="modal__text">${el.dates.start.timezone}</p>
-        <p class="modal__text">${el._embedded.venues[0].name}</p>
+        <p class="modal__text">${el._embedded.venues[0].city.name}</p>
+        <p class="modal__text">${el._embedded.venues[0].country.name}</p>
       </li>
       <li class="modal__item">
         <h2 class="modal__title">Who</h2>
@@ -56,9 +40,9 @@ export function ticketModal(el) {
           <svg class="modal__text-ticket" width="24" height="16">
             <use href="${sprite}#icon-ticket"></use>
           </svg>
-          el.priceRanges.type el.priceRanges.min-el.priceRanges.max el.priceRanges.currency
+          Standart ${el.priceRanges[0].min}-${el.priceRanges[0].max} ${el.priceRanges[0].currency}
         </p>
-        <button class="modal__buy-btn blob-btn">
+        <a class="modal__buy-btn blob-btn" href="${el.url}" target="_blank">
           Buy tickets
           <span class="blob-btn__inner">
             <span class="blob-btn__blobs">
@@ -68,14 +52,14 @@ export function ticketModal(el) {
               <span class="blob-btn__blob"></span>
             </span>
           </span>
-        </button>
+        </a>
         <p class="modal__text-wrapper">
           <svg class="modal__text-ticket" width="24" height="16">
             <use href="${sprite}#icon-ticket"></use>
           </svg>
-          VIP 1000-1500 UAH
+          Vip ${el.priceRanges[0].max} ${el.priceRanges[0].currency}
         </p>
-        <button class="modal__buy-btn blob-btn">
+        <a class="modal__buy-btn blob-btn" href="${el.url}" target="_blank">
           Buy tickets
           <span class="blob-btn__inner">
             <span class="blob-btn__blobs">
@@ -85,10 +69,10 @@ export function ticketModal(el) {
               <span class="blob-btn__blob"></span>
             </span>
           </span>
-        </button>
+        </a>
       </li>
     </ul>
-    <button class="modal__author-btn more-btn">
+    <a class="modal__author-btn more-btn" href="${el._embedded.attractions[0].url}" target="_blank">
       More From This Author
       <span class="more-btn__wrap">
         <span class="more-btn__mores">
@@ -98,7 +82,7 @@ export function ticketModal(el) {
           <span class="more-btn__more"></span>
         </span>
       </span>
-    </button>
+    </a>
   </div>
 </div>
 `;
