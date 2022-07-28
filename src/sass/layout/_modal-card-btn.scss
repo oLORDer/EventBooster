@@ -17,7 +17,7 @@
   }
 }
 
-$cyan: #FFFFFF;
+$cyan: #ffffff;
 $dark: #4c00fe;
 $borderW: 2px;
 
@@ -33,7 +33,7 @@ $borderW: 2px;
   border-radius: 5px;
 
   &:before {
-    content: "";
+    content: '';
     z-index: 1;
     position: absolute;
     left: 0;
@@ -45,11 +45,11 @@ $borderW: 2px;
   }
 
   &:after {
-    content: "";
+    content: '';
     z-index: -2;
     position: absolute;
-    left: $borderW*1.5;
-    top: $borderW*1.5;
+    left: $borderW * 1.5;
+    top: $borderW * 1.5;
     width: 100%;
     height: 100%;
 
@@ -78,7 +78,7 @@ $borderW: 2px;
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    background: #4C00FE;
+    background: #4c00fe;
   }
 
   // additional container created, because in FF blobs are breaking overflow:hidden of element with svg gooey filter
@@ -99,7 +99,7 @@ $borderW: 2px;
     transform: translate3d(0, 150%, 0) scale(1.7);
     transition: transform 0.45s;
 
-    @supports(filter: url('#goo')) {
+    @supports (filter: url('#goo')) {
       transform: translate3d(0, 150%, 0) scale(1.4);
     }
 
@@ -113,12 +113,11 @@ $borderW: 2px;
     .blob-btn:hover & {
       transform: translateZ(0) scale(1.7);
 
-      @supports(filter: url('#goo')) {
+      @supports (filter: url('#goo')) {
         transform: translateZ(0) scale(1.4);
       }
     }
   }
-
 }
 
 //Styles for MORE FROM THE AUTHOR button
@@ -136,7 +135,7 @@ $borderW: 2px;
 }
 
 $blue: #4c00fe;
-$white: #FFFFFF;
+$white: #ffffff;
 $borderWidth: 1px;
 
 .more-btn {
@@ -151,7 +150,7 @@ $borderWidth: 1px;
   border-radius: 5px;
 
   &:before {
-    content: "";
+    content: '';
     z-index: 1;
     position: absolute;
     left: 0;
@@ -163,11 +162,11 @@ $borderWidth: 1px;
   }
 
   &:after {
-    content: "";
+    content: '';
     z-index: -2;
     position: absolute;
-    left: $borderWidth*1.5;
-    top: $borderWidth*1.5;
+    left: $borderWidth * 1.5;
+    top: $borderWidth * 1.5;
     width: 100%;
     height: 100%;
 
@@ -216,7 +215,7 @@ $borderWidth: 1px;
     transform: translate3d(0, 150%, 0) scale(1.7);
     transition: transform 0.45s;
 
-    @supports(filter: url('#goo')) {
+    @supports (filter: url('#goo')) {
       transform: translate3d(0, 150%, 0) scale(1.4);
     }
 
@@ -230,10 +229,9 @@ $borderWidth: 1px;
     .more-btn:hover & {
       transform: translateZ(0) scale(1.7);
 
-      @supports(filter: url('#goo')) {
+      @supports (filter: url('#goo')) {
         transform: translateZ(0) scale(1.4);
       }
     }
   }
-
 }

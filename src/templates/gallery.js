@@ -1,5 +1,8 @@
 'use strict';
 
+import point from '../images/point.svg';
+import checkmark from '../images/close.svg';
+
 export function ticketMarkup(el) {
   return `<li data-id="${el.id}" class= "gallery__item">
 
