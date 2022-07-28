@@ -2,6 +2,18 @@
 import sprite from '../images/sprite.svg';
 
 export function ticketModal(el) {
+  console.log(el);
+  if (!el.priceRanges) {
+    el.priceRanges = [{}];
+    el.priceRanges[0].min = '';
+    el.priceRanges[0].max = 'Sold out';
+    el.priceRanges[0].currency = '';
+  }
+
+  if (!el._embedded.events) {
+    el._embedded.events = { info: 'No information' };
+  }
+
   return `<div class="modal">
   <div class="modal__window">
     <button class="modal__close-btn" type="button">
@@ -17,7 +29,7 @@ export function ticketModal(el) {
       <li class="modal__item">
         <h2 class="modal__title">Info</h2>
         <p class="modal__text">
-        {el._embedded.events.info}
+        ${el._embedded.events.info}
         </p>
       </li>
       <li class="modal__item">
@@ -40,7 +52,7 @@ export function ticketModal(el) {
           <svg class="modal__text-ticket" width="24" height="16">
             <use href="${sprite}#icon-ticket"></use>
           </svg>
-          Standart ${el.priceRanges[0].min}-${el.priceRanges[0].max} ${el.priceRanges[0].currency}
+          Standart ${el.priceRanges[0].min} - ${el.priceRanges[0].max} ${el.priceRanges[0].currency}
         </p>
         <a class="modal__buy-btn blob-btn" href="${el.url}" target="_blank">
           Buy tickets
