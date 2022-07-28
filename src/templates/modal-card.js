@@ -1,11 +1,12 @@
 'use strict';
+import sprite from '../images/sprite.svg';
 
 export function ticketModal(el) {
   return `<div class="modal">
   <div class="modal__window">
     <button class="modal__close-btn" type="button">
       <svg class="modal__close-icon" width="17" height="17">
-        <use href="./images/sprite.svg#icon-close"></use>
+        <use href="${sprite}#icon-close"></use>
       </svg>
     </button>
     <picture class="modal__img">
@@ -53,7 +54,7 @@ export function ticketModal(el) {
         <h2 class="modal__title">Prices</h2>
         <p class="modal__text-wrapper">
           <svg class="modal__text-ticket" width="24" height="16">
-            <use href="./images/sprite.svg#icon-ticket"></use>
+            <use href="${sprite}#icon-ticket"></use>
           </svg>
           el.priceRanges.type el.priceRanges.min-el.priceRanges.max el.priceRanges.currency
         </p>
@@ -70,7 +71,7 @@ export function ticketModal(el) {
         </button>
         <p class="modal__text-wrapper">
           <svg class="modal__text-ticket" width="24" height="16">
-            <use href="./images/sprite.svg#icon-ticket"></use>
+            <use href="${sprite}#icon-ticket"></use>
           </svg>
           VIP 1000-1500 UAH
         </p>
