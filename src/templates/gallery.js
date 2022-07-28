@@ -25,7 +25,7 @@ export function ticketMarkup(el) {
     </div>
   </div>
 
-<a class="gallery__link" href="">${el._embedded.venues[0].name}</a>
-</li>
-`;
+<a class="gallery__link" href=""><span class="gallery__link--text">
+${el._embedded.venues[0].name}</span></a>
+</li>`;
 }
