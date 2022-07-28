@@ -3,9 +3,11 @@ const btn = document.querySelector('.switch')
 
 btn.addEventListener('click', () => {
     if(localStorage.getItem('theme') === 'light'){
+
         localStorage.removeItem('theme');
     } else {
         localStorage.setItem ('theme', 'light');
+        btn.checked
     }
     addLightClassToBody()
 })

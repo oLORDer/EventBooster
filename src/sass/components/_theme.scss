@@ -22,14 +22,29 @@ body.light .gallery__icon {
 #theme-toggle + label {
   content: '';
   position: absolute;
-  top: 109px;
-  right: 138px;
+  top: 60px;
+  right: 70px;
   display: inline-block;
   cursor: pointer;
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
+  @include mq(tablet) {
+    height: 35px;
+    width: 35px;
+    top: 90px;
+    right: 90px;
+
+  }
+
+  @include mq(desktop) {
+    height: 50px;
+    width: 50px;
+    top: 109px;
+    right: 138px;
+
+  }
 }
 
 #theme-toggle:checked + label {
@@ -38,7 +53,26 @@ body.light .gallery__icon {
 
 #theme-toggle:not(:checked) + label {
   background-color: transparent;
-  box-shadow: inset -18px -16px 1px 1px #fff;
+  box-shadow: inset -5px -3px 1px 1px #fff;
+  height: 20px;
+  width: 20px;
+  top: 60px;
+  right: 70px;
+  @include mq(tablet) {
+    height: 35px;
+    width: 35px;
+    top: 90px;
+    right: 90px;
+    box-shadow: inset -10px -7px 2px 1px #fff;
+  }
+
+  @include mq(desktop) {
+    height: 50px;
+    width: 50px;
+    top: 109px;
+    right: 138px;
+    box-shadow: inset -18px -16px 1px 1px #fff;
+  }
 }
 
 //user-select: none;
