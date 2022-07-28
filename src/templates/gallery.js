@@ -28,12 +28,7 @@ export function ticketMarkup(el) {
     </div>
   </div>
 
-<a class="gallery__link" href="">
-  <svg class="gallery__icon" width="10" height="10">
-    <use xlink:href="${point}"></use>
-  </svg> 
-  
-${el._embedded.venues[0].name}</a>
-</li>
-`;
+<a class="gallery__link" href=""><span class="gallery__link--text">
+${el._embedded.venues[0].name}</span></a>
+</li>`;
 }

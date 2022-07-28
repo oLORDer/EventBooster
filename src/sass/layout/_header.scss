@@ -1,4 +1,5 @@
 .header {
+  max-height: 364px;
   position: relative;
   padding-top: 80px;
   padding-bottom: 112px;
@@ -28,6 +29,7 @@
   }
 
   @include mq(tablet) {
+
     padding-top: 40px;
     padding-bottom: 170px;
     background-image: linear-gradient(
@@ -57,6 +59,7 @@
 
   @include mq(desktop) {
     max-width: 1680;
+    max-height: 446px;
     background-image: linear-gradient(
         180deg,
         rgba(13, 13, 13, 0.19) 0%,
@@ -131,7 +134,7 @@
 
 .header__title {
   width: 220px;
-  color: #dc56c5;
+  color: $main-color;
   font-family: 'Montserrat';
   font-weight: 900;
   font-size: 18px;
@@ -162,7 +165,7 @@
   height: 40px;
   padding: 16px 32px;
   color: #939393;
-  backdrop-filter: blur(20px);
+
 
   @include mq(mobile) {
     width: 336px;
@@ -192,6 +195,10 @@
     max-width: 336px;
     margin-right: 32px;
   }
+  @include mq(desktop) {
+    width: 288px;
+    font-size: 16px;
+  }
 }
 .search-input__button {
   position: absolute;
@@ -200,28 +207,18 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
-}
-.country-input__button {
-  position: absolute;
-  top: 10px;
-  right: 32px;
-  border: none;
-  background-color: transparent;
+  @include mq(desktop) {
+    right: 55px;
+  }
 }
 
-.search-input__icon,
-.country-input__icon {
+
+.search-input__icon {
   fill: #939393;
 }
 
-.country-input {
-  max-width: 280px;
-  @include mq(tablet) {
-    max-width: 336px;
-  }
-}
-.search-input::placeholder,
-.country-input::placeholder {
+
+.search-input::placeholder {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
@@ -243,3 +240,174 @@
   }
 }
 
+// Стили селектора страны
+.select-container{
+  margin: 0 auto;
+
+}
+.select-box{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  color: #CCCCCC;
+
+}
+
+.select-box .options-container{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  color: #CCCCCC;
+  max-height: 0;
+  width: 280px;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+
+  order: 1;
+}
+
+.selected{
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 8px;
+  color: rgba(147, 147, 147, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  position: relative;
+  padding:10px 32px;
+  order: 0;
+  @include mq(tablet) {
+    font-size: 16px;
+    width: 360px;
+  }
+
+  @include mq(desktop) {
+    width: 288px;
+    font-size: 16px;
+  }
+}
+
+.selected::after{
+  content: '';
+  background: url("../images/header/selector.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  height: 100%;
+  width: 15px;
+  right: 30px;
+  top: 15px;
+  transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+  max-height: 70px;
+  opacity: 1;
+  overflow-y: scroll;
+  margin-top: 54px;
+  @include mq(tablet) {
+    font-size: 16px;
+    width: 360px;
+    max-height: 100px;
+  }
+
+  @include mq(desktop) {
+    width: 288px;
+    font-size: 16px;
+    max-height: 130px;
+  }
+
+}
+
+.select-box .options-container.active  + .selected::after{
+transform: rotateX(180deg);
+top:-15px;
+
+}
+
+.select-box .options-container::-webkit-scrollbar{
+  width: 8px;
+  background-color: #939393;
+  border-radius: 0 8px 8px 0;
+  @include mq(desktop) {
+    width: 8px;
+    background-color: #939393;
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb{
+  background-color: #939393;
+  @include mq(desktop) {
+    width: 8px;
+    background-color: #939393;
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+
+.select-box .option,
+.selected {
+padding-left:30px;
+cursor: pointer;
+}
+
+.select-box .option:hover{
+  background-color: #DC56C5;
+}
+
+.select-box label{
+  cursor: pointer;
+}
+
+.select-box .option .radio{
+  display: none;
+
+}
+.search__box{
+  width: 280px;
+
+}
+.search__box input {
+  padding: 10px 0px 10px 32px;
+  font-size: 16px;
+  position: absolute;
+  border-radius: 8px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition:  all 0.4s;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: none;
+  height: 40px;
+  padding: 16px 32px;
+  color: #939393;
+  @include mq(tablet) {
+
+    width: 360px;
+    margin-bottom: 40px;
+  }
+
+  @include mq(desktop) {
+    width: 288px;
+
+  }
+}
+
+.search__box input:focus{
+  outline: none;
+}
+
+.select-box .options-container.active ~ .search__box input {
+  opacity: 1;
+  pointer-events: auto;
+}

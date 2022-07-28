@@ -1,0 +1,44 @@
+.light {
+  background-color: #ffffff;
+
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.light .gallery__txt,
+body.light .gallery__link,
+body.light .gallery__icon {
+  color: #000000;
+  transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#hybrid {
+  visibility: hidden;
+}
+
+#theme-toggle {
+  visibility: hidden;
+}
+
+#theme-toggle + label {
+  content: '';
+  position: absolute;
+  top: 109px;
+  right: 138px;
+  display: inline-block;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+#theme-toggle:checked + label {
+  background-color: $main-color;
+}
+
+#theme-toggle:not(:checked) + label {
+  background-color: transparent;
+  box-shadow: inset -18px -16px 1px 1px #fff;
+}
+
+//user-select: none;

@@ -16,68 +16,43 @@ img {
 }
 
 body {
+  // по дефолту, з mobile
   font-family: 'Montserrat', sans-serif;
-  background-color: #000000;
+  background-color: #0d0d0d; 
+  background-image: url('../images/cards/bcg-body.png'); 
   transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
+  //tablet
+  @include mq (tablet){
+  background-image: 
+  url('../images/cards/ellipse-6-tablet.png'),
+  url('../images/cards/ellipse-5-tablet.png'),
+  url('../images/cards/ellipse-5-tablet.png');
+
+
+  // url('../images/cards/bcg-body.png'); останній, 100%
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 475px, 126px, 126px;
+  background-position: left 0 bottom 0, left 20 bottom 1400, right 10 bottom 0;
+  }
 }
+
+
+
 
 
 //? theme switcher
-.light{
-  background-color: #ffffff;
-  
+.light {
+  background-color: #fff3;
+
   transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body.light .gallery__txt,  body.light .gallery__link, body.light .gallery__icon{
+body.light .gallery__txt,
+body.light .gallery__link,
+body.light .gallery__icon {
   color: #000000;
   transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-//?markup in header
-// <div theme="dark">
-//         <div>
-//           <input type="checkbox" id="theme-toggle" class="switch"/>
-//           <label for="theme-toggle"></label>
-//         </div>
-//       </div>
-
-
-//?switch-btn
-//user-select: none;
-
-#hybrid {
-  visibility: hidden;
-}
-
-#theme-toggle {
-  visibility: hidden;
-}
-
-#theme-toggle + label {
-  content: '';
-  position:absolute;
-  top: 6px;
-  right: -576px;
-  display: inline-block;
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  transition: all 0.3s ease-in-out;
-}
-
-#theme-toggle:checked + label {
-  background-color: #dc56c5;;
-}
-
-#theme-toggle:not(:checked) + label {
-  background-color: transparent;
-  box-shadow: inset -18px -16px 1px 1px #fff;
-}
-
-
-//?svg in gallery
-// <svg class="gallery__icon" width="10" height="10">
-//       <use href=".images/sprite.svg#icon-map-point"></use>
-//   </svg>
