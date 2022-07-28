@@ -1,5 +1,8 @@
 'use strict';
 
+import point from '../images/point.svg';
+import checkmark from '../images/close.svg';
+
 export function ticketMarkup(el) {
   return `<li data-id="${el.id}" class= "gallery__item">
 
@@ -25,7 +28,12 @@ export function ticketMarkup(el) {
     </div>
   </div>
 
-<a class="gallery__link" href="">${el._embedded.venues[0].name}</a>
+<a class="gallery__link" href="">
+  <svg class="gallery__icon" width="10" height="10">
+    <use xlink:href="${point}"></use>
+  </svg> 
+  
+${el._embedded.venues[0].name}</a>
 </li>
 `;
 }

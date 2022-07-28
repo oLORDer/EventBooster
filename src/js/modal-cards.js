@@ -5,6 +5,57 @@ import { TicketmasterAPI } from './ticketmaster-api';
 
 const ticketmasterAPI = new TicketmasterAPI();
 
-// const targetEl = document.querySelector('.js-target');
+const modalEl = document.querySelector('.for-modal-js');
+const galleryEl = document.querySelector('.gallery');
 
-// console.log(targetEl);
+renderModalCard();
+
+async function renderModalCard(e) {
+  try {
+    const response = await ticketmasterAPI.fetchTickets();
+
+    let inputs = galleryEl.getElementsByTagName('li');
+
+    for (let i = 0; i < inputs.length; i += 1) {
+      inputs[i].addEventListener('click', onTargetElementClick);
+    }
+
+    function onTargetElementClick() {
+      let modalCardMarkup = null;
+      response._embedded.events.forEach(el => {
+        if (this.dataset.id === el.id) {
+          return (modalCardMarkup = ticketModal(el));
+        }
+      });
+      modalEl.innerHTML = modalCardMarkup;
+
+      const closeModalBtn = document.querySelector('.modal__close-btn');
+      const backdropEl = document.querySelector('.modal');
+
+      window.addEventListener('keydown', onEscBtnPush);
+      backdropEl.addEventListener('click', onBackdropElClick);
+      closeModalBtn.addEventListener('click', closeModalWindow);
+
+      function onBackdropElClick(e) {
+        if (e.target !== e.currentTarget) {
+          return;
+        }
+        closeModalWindow();
+      }
+
+      function onEscBtnPush(e) {
+        if (e.code !== 'Escape') {
+          return;
+        }
+        closeModalWindow();
+      }
+
+      function closeModalWindow() {
+        modalEl.innerHTML = '';
+        window.removeEventListener('keydown', onEscBtnPush);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
