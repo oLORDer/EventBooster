@@ -92,9 +92,11 @@
   }
 }
 
-.modal__img img {
+.modal__img {
   border-radius: 50%;
   object-fit: cover;
+  width: 102px;
+  height: 102px;
 
   @include mq(tablet) {
     width: 70px;
@@ -115,7 +117,6 @@
   @include mq(tablet) {
     display: grid;
     grid-template-columns: repeat(2, 290px);
-    // grid-template-rows: 100px;
     gap: 0px 32px;
     margin-bottom: 40px;
   }
@@ -151,8 +152,10 @@
     }
   }
 
-  &-poster img {
+  &-poster {
     object-fit: cover;
+    // object-fit: contain;
+    // object-fit: fill;
     width: 249px;
     height: 445px;
 
@@ -194,6 +197,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 0px;
+    text-transform: uppercase;
   }
 
   &-ticket {

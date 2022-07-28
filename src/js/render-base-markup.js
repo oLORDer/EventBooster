@@ -51,6 +51,7 @@ async function renderBaseMarkup() {
       let modalCardMarkup = null;
       response._embedded.events.forEach(el => {
         if (this.dataset.id === el.id) {
+          console.log(el);
           return (modalCardMarkup = ticketModal(el));
         }
       });
