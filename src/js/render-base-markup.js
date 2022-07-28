@@ -7,20 +7,19 @@ import { paginal } from './paginal';
 
 const ticketmasterAPI = new TicketmasterAPI();
 
+const modalEl = document.querySelector('.for-modal-js');
 const galleryEl = document.querySelector('.gallery');
 const searchQueryEl = document.querySelector('.js-serch-query');
-const searchCountryEl = document.querySelector('.country-input');
-
-const modalEl = document.querySelector('.for-modal-js');
+// const searchCountryEl = document.querySelector('.selected');
 
 renderBaseMarkup();
 
 searchQueryEl.addEventListener('submit', onSerchQuerySubmit);
+
 // searchCountryEl.addEventListener('change', onSerchCountryChange);
 
 // function onSerchCountryChange() {
-//   ticketmasterAPI.searchCountry = searchCountryEl.value;
-//   renderBaseMarkup();
+//   console.log(searchCountryEl);
 // }
 
 async function onSerchQuerySubmit(e) {
