@@ -9,13 +9,6 @@
   "transformers": {
     "*.hbs": [
       "parcel-transformer-hbs"
-    ],
-    "*.svg": [
-      "parcel-transformer-svg-sprite"
     ]
-  },
-  
-  "packagers": {
-    "*.html": "parcel-packager-svg-sprite"
   }
 }
