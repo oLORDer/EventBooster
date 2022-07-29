@@ -36,9 +36,12 @@ async function renderBaseMarkup() {
     galleryEl.addEventListener('click', openModalByClick);
 
     function openModalByClick(e) {
-      if (e.target.nodeName === 'UL') {
-        return;
-      }
+      console.log(e.target.parentElement);
+      console.log(e.target.parentElement.parentElement);
+
+      // if (!e.target.parentElement.dataset.id) {
+      //   return;
+      // }
 
       let modalCardMarkup = null;
       response._embedded.events.forEach(el => {
