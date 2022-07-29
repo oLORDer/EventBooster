@@ -6,10 +6,37 @@
 
 body.light .gallery__txt,
 body.light .gallery__link,
-body.light .gallery__icon {
+body.light .gallery__icon{
   color: #000000;
   transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+body.light .gallery__link--text::before{
+  background: url("../images/vector-light.svg");
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body.light .footer__link:hover .footer__text{
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 0 0 20px #DC56C5;
+  border-radius: 10px;
+  background-color: #000000;
+}
+body.light .footer__link:focus .footer__text{
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 0 0 20px #DC56C5;
+  border-radius: 10px;
+  background-color: #000000;
+}
+body.light .scroll{
+  background-color: #000000;
+  border-radius: 100%;
+  width: 29px;
+  height: 29px;
+}
+
 
 #hybrid {
   visibility: hidden;
