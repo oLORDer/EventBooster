@@ -36,8 +36,6 @@ async function renderBaseMarkup() {
     galleryEl.addEventListener('click', openModalByClick);
 
     function openModalByClick(e) {
-      console.log(e.target.parentElement.dataset.id);
-
       let modalCardMarkup = null;
       response._embedded.events.forEach(el => {
         if (e.target.parentElement.dataset.id === el.id) {
