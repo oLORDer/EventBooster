@@ -2,9 +2,6 @@
 import sprite from '../images/sprite.svg';
 
 export function ticketModal(el) {
-  // const modalBtnMoreEvents = document.querySelector('.js-modal-btn-more');
-
-  // console.log(modalBtnMoreEvents);
   if (!el.priceRanges) {
     el.priceRanges = [{}];
     el.priceRanges[0].min = '';

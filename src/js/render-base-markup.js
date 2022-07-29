@@ -4,23 +4,17 @@ import { ticketModal } from '../templates/modal-card';
 import { ticketMarkup } from '../templates/gallery';
 import { TicketmasterAPI } from './ticketmaster-api';
 import { paginal } from './paginal';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 const ticketmasterAPI = new TicketmasterAPI();
 
 const modalEl = document.querySelector('.for-modal-js');
 const galleryEl = document.querySelector('.gallery');
 const searchQueryEl = document.querySelector('.js-serch-query');
-// const searchCountryEl = document.querySelector('.selected');
 
 renderBaseMarkup();
 
 searchQueryEl.addEventListener('submit', onSerchQuerySubmit);
-
-// searchCountryEl.addEventListener('change', onSerchCountryChange);
-
-// function onSerchCountryChange() {
-//   console.log(searchCountryEl);
-// }
 
 async function onSerchQuerySubmit(e) {
   e.preventDefault();
@@ -112,6 +106,11 @@ async function renderBaseMarkup() {
       ticketmasterAPI.page
     );
   } catch (err) {
+    Report.failure(
+      'Error',
+      'Sorry, no matches were found. Try a new search or use our suggestions.',
+      'Okay'
+    );
     console.log(err);
   }
 }
