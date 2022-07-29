@@ -10,13 +10,25 @@ const ticketmasterAPI = new TicketmasterAPI();
 const galleryEl = document.querySelector('.gallery');
 const searchQueryEl = document.querySelector('.js-serch-query');
 
+let countryBefore = null;
+
 renderBaseMarkup();
 
 searchQueryEl.addEventListener('submit', onSerchQuerySubmit);
 
 async function onSerchQuerySubmit(e) {
   e.preventDefault();
+
+  if (
+    ticketmasterAPI.searchQuery === e.currentTarget.elements.serchQuery.value &&
+    countryBefore === ticketmasterAPI.searchCountry
+  ) {
+    return;
+  }
+
+  countryBefore = ticketmasterAPI.searchCountry;
   ticketmasterAPI.searchQuery = e.currentTarget.elements.serchQuery.value;
+
   renderBaseMarkup();
 }
 
