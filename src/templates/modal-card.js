@@ -2,7 +2,6 @@
 import sprite from '../images/sprite.svg';
 
 export function ticketModal(el) {
-  console.log(el);
   if (!el.priceRanges) {
     el.priceRanges = [{}];
     el.priceRanges[0].min = '';
