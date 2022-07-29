@@ -9,6 +9,7 @@ export class TicketmasterAPI {
     this.searchCountry = '';
     this.page = 0;
     this.size = 16;
+    this.id = '';
   }
 
   async fetchTickets() {
@@ -18,6 +19,7 @@ export class TicketmasterAPI {
       countryCode: this.searchCountry,
       page: this.page,
       size: this.size,
+      id: this.id,
     });
 
     const response = await fetch(`${this.#BASE_URL}?${serchParams}`);
