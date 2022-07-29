@@ -83,7 +83,7 @@ export function ticketModal(el) {
         </a>
       </li>
     </ul>
-    <a class="modal__author-btn more-btn" href="${el._embedded.attractions[0].url}" target="_blank">
+    <button class="modal__author-btn more-btn js-modal-btn-more" href="#" type="button" data-name="${el.name}">
       More From This Author
       <span class="more-btn__wrap">
         <span class="more-btn__mores">
@@ -93,7 +93,7 @@ export function ticketModal(el) {
           <span class="more-btn__more"></span>
         </span>
       </span>
-    </a>
+    </button>
   </div>
 </div>
 `;

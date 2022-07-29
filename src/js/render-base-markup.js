@@ -4,7 +4,7 @@ import { ticketModal } from '../templates/modal-card';
 import { ticketMarkup } from '../templates/gallery';
 import { TicketmasterAPI } from './ticketmaster-api';
 import { paginal } from './paginal';
-import { Report } from 'notiflix/build/notiflix-report-aio';
+// import { Report } from 'notiflix/build/notiflix-report-aio';
 
 const ticketmasterAPI = new TicketmasterAPI();
 
@@ -30,21 +30,15 @@ async function renderBaseMarkup() {
         return ticketMarkup(el);
       })
       .join('');
-
     galleryEl.innerHTML = baseMarkup;
 
-    //? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //* Modal window
+    galleryEl.addEventListener('click', openModalByClick);
 
-    let inputs = galleryEl.getElementsByTagName('LI');
-
-    for (let i = 0; i < inputs.length; i += 1) {
-      inputs[i].addEventListener('click', onTargetElementClick);
-    }
-
-    function onTargetElementClick() {
+    function openModalByClick(e) {
       let modalCardMarkup = null;
       response._embedded.events.forEach(el => {
-        if (this.dataset.id === el.id) {
+        if (e.target.parentElement.dataset.id === el.id) {
           return (modalCardMarkup = ticketModal(el));
         }
       });
@@ -53,10 +47,19 @@ async function renderBaseMarkup() {
 
       const closeModalBtn = document.querySelector('.modal__close-btn');
       const backdropEl = document.querySelector('.modal');
+      const modalBtnMoreEvents = document.querySelector('.js-modal-btn-more');
 
       window.addEventListener('keydown', onEscBtnPush);
       backdropEl.addEventListener('click', onBackdropElClick);
       closeModalBtn.addEventListener('click', closeModalWindow);
+      modalBtnMoreEvents.addEventListener('click', moreEventsModalBtn);
+
+      //Search more events by author - modal window
+      function moreEventsModalBtn(e) {
+        closeModalWindow();
+        ticketmasterAPI.searchQuery = this.dataset.name;
+        renderBaseMarkup();
+      }
 
       function onBackdropElClick(e) {
         if (e.target !== e.currentTarget) {
