@@ -4,7 +4,7 @@ import { ticketModal } from '../templates/modal-card';
 import { ticketMarkup } from '../templates/gallery';
 import { TicketmasterAPI } from './ticketmaster-api';
 import { paginal } from './paginal';
-import { Report } from 'notiflix/build/notiflix-report-aio';
+// import { Report } from 'notiflix/build/notiflix-report-aio';
 
 const ticketmasterAPI = new TicketmasterAPI();
 
@@ -33,21 +33,7 @@ async function renderBaseMarkup() {
     galleryEl.innerHTML = baseMarkup;
 
     //* Modal window
-    const galleryDiv = document.querySelector('.gallery');
-    galleryDiv.addEventListener('click', openModalByClick);
-
-    function openModalByClick(e) {
-      // if (e.target.nodeName !== 'LI') {
-      //   return;
-      // }
-      // console.log(e.target.parentElement.dataset.id);
-    }
-
-    // let inputs = galleryEl.getElementsByTagName('LI');
-
-    // for (let i = 0; i < inputs.length; i += 1) {
-    //   inputs[i].addEventListener('click', onTargetElementClick);
-    // }
+    galleryEl.addEventListener('click', openModalByClick);
 
     function openModalByClick(e) {
       console.log(e.target.parentElement.dataset.id);
