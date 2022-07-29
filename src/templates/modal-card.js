@@ -2,7 +2,9 @@
 import sprite from '../images/sprite.svg';
 
 export function ticketModal(el) {
-  console.log(el);
+  // const modalBtnMoreEvents = document.querySelector('.js-modal-btn-more');
+
+  // console.log(modalBtnMoreEvents);
   if (!el.priceRanges) {
     el.priceRanges = [{}];
     el.priceRanges[0].min = '';
@@ -84,7 +86,7 @@ export function ticketModal(el) {
         </a>
       </li>
     </ul>
-    <a class="modal__author-btn more-btn" href="${el._embedded.attractions[0].url}" target="_blank">
+    <button class="modal__author-btn more-btn js-modal-btn-more" href="#" type="button" data-name="${el.name}">
       More From This Author
       <span class="more-btn__wrap">
         <span class="more-btn__mores">
@@ -94,7 +96,7 @@ export function ticketModal(el) {
           <span class="more-btn__more"></span>
         </span>
       </span>
-    </a>
+    </button>
   </div>
 </div>
 `;
