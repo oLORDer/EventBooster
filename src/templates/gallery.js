@@ -14,7 +14,7 @@ export function ticketMarkup(el) {
         src="${el.images[1].url}"
         alt="фото веб-сайта"
       />
-    <div class="gallery__wrap">
+    <div data-id="${el.id}" class="gallery__wrap">
       <h2 class="gallery__title"> ${nameArtist}</h2>
       <p class="gallery__txt">${el.dates.start.localDate}</p>
     </div>
