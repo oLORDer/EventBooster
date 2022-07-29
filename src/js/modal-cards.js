@@ -43,7 +43,6 @@ async function renderModalCard(e) {
       ticketmasterAPI.searchQuery = this.dataset.name;
       ticketmasterAPI.page = 0;
       renderBaseMarkup();
-      console.log(ticketmasterAPI.searchQuery);
       ticketmasterAPI.searchQuery = '';
       return;
     }
