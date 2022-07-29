@@ -4,7 +4,7 @@ import { ticketModal } from '../templates/modal-card';
 import { ticketMarkup } from '../templates/gallery';
 import { TicketmasterAPI } from './ticketmaster-api';
 import { paginal } from './paginal';
-// import { Report } from 'notiflix/build/notiflix-report-aio';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 const ticketmasterAPI = new TicketmasterAPI();
 
@@ -36,6 +36,10 @@ async function renderBaseMarkup() {
     galleryEl.addEventListener('click', openModalByClick);
 
     function openModalByClick(e) {
+      if (e.target.nodeName === 'UL') {
+        return;
+      }
+
       let modalCardMarkup = null;
       response._embedded.events.forEach(el => {
         if (e.target.parentElement.dataset.id === el.id) {
@@ -54,8 +58,8 @@ async function renderBaseMarkup() {
       closeModalBtn.addEventListener('click', closeModalWindow);
       modalBtnMoreEvents.addEventListener('click', moreEventsModalBtn);
 
-      //Search more events by author - modal window
-      function moreEventsModalBtn(e) {
+      //Search more events by button 'more from the author' - modal window
+      function moreEventsModalBtn() {
         closeModalWindow();
         ticketmasterAPI.searchQuery = this.dataset.name;
         renderBaseMarkup();
