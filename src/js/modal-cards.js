@@ -10,13 +10,18 @@ galleryEl.addEventListener('click', renderModalCard);
 
 async function renderModalCard(e) {
   try {
-    if (!e.target.parentElement.dataset.id) {
+    if (
+      !e.target.parentElement.dataset.id &&
+      !e.target.parentElement.parentElement.dataset.id
+    ) {
       return;
     }
 
     const response = await ticketmasterAPI.fetchEventById(
-      e.target.parentElement.dataset.id
+      e.target.parentElement.dataset.id ||
+        e.target.parentElement.parentElement.dataset.id
     );
+    console.log(response);
 
     modalEl.innerHTML = ticketModal(response);
 
@@ -38,7 +43,6 @@ async function renderModalCard(e) {
       ticketmasterAPI.searchQuery = this.dataset.name;
       ticketmasterAPI.page = 0;
       renderBaseMarkup();
-      console.log(ticketmasterAPI.searchQuery);
       ticketmasterAPI.searchQuery = '';
       return;
     }
