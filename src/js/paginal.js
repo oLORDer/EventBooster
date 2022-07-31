@@ -27,6 +27,7 @@ function paginal(totalObjects, numberImgPerPage, currentPage) {
   if (sum <= 5 && sum > 0) {
     list.innerHTML = btnsArr.join('');
   } else if (sum > 0) {
+
     if (currentPage >= len - 3) {
       list.innerHTML =
         btnsArr[0] +
@@ -40,6 +41,7 @@ function paginal(totalObjects, numberImgPerPage, currentPage) {
         '...' +
         btnsArr[len - 1];
     } else if (currentPage >= 2) {
+
       list.innerHTML =
         btnsArr[0] +
         '...' +

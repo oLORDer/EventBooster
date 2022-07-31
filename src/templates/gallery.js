@@ -22,6 +22,7 @@ export function ticketMarkup(el) {
     el._embedded.venues[0].location.longitude = '';
   }
 
+
   return `<li class= "gallery__item">
 
   <div class="js-target flip-scale-down-diag-2" data-id="${el.id}">

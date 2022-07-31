@@ -1,6 +1,7 @@
 .act {
   color: $main-color;
   border: 1px solid $main-color;
+
   border-radius: 10px 0px;
   animation: animate 1s linear;
 }
@@ -36,6 +37,14 @@
 //Change mode LIGHT - DARK by operating system setting //
   @media (prefers-color-scheme: light) {
     color: black;
+  }
+}
+
+.paginal li {
+  padding: 5px 10px;
+
+  &:hover {
+    color: $main-color;
   }
 }
 

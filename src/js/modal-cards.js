@@ -24,6 +24,8 @@ async function renderModalCard(e) {
 
     modalEl.classList.remove('visually-hidden');
 
+    modalEl.classList.remove('visually-hidden');
+
     modalEl.innerHTML = ticketModal(response);
 
     document.body.classList.add('no-scroll');
