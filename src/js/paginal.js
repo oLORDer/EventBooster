@@ -66,7 +66,10 @@ function paginClick(e) {
     return;
   }
   ticketmasterAPI.page = e.target.textContent - 1;
-  window.scrollTo(0, 0);
+  
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 1000);
   renderBaseMarkup();
 }
 
