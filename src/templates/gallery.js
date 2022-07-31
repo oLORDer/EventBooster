@@ -1,9 +1,14 @@
 'use strict';
-
+export const haventPlace = 'place will be soon';
 export function ticketMarkup(el) {
   let nameArtist = el.name;
   if (el.name.length > 20) {
     nameArtist = el.name.slice(0, 20) + '...';
+  }
+
+  if (!el._embedded.venues[0].name) {
+    el._embedded.venues[0].name = haventPlace;
+    console.log(el._embedded);
   }
 
   return `<li class= "gallery__item">
@@ -22,7 +27,6 @@ export function ticketMarkup(el) {
     </div>
   </div>
 
-<a class="gallery__link" href="https://www.google.com/maps/@${el._embedded.venues[0].location.latitude},${el._embedded.venues[0].location.longitude},14z " target="_blank"><span class="gallery__link--text">
-${el._embedded.venues[0].name}</span></a>
+<a class="gallery__link" href="https://www.google.com/maps/@${el._embedded.venues[0].location.latitude},${el._embedded.venues[0].location.longitude},14z " target="_blank"><span class="gallery__link--text">${el._embedded.venues[0].name}</span></a>
 </li>`;
 }
