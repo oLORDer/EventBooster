@@ -28,7 +28,7 @@ a {
   z-index: 1;
   width: 130px;
   margin: 10px;
-  transition-property:scale;
+  transition-property:transform;
   @extend %transition;
 
   @include mq(tablet) {
@@ -114,7 +114,7 @@ a {
   font-size: 14px;
   font-weight: 700;
   color: $main-color;
-  transition-property:box-shadow,border-radius,scale;
+  transition-property:box-shadow,border-radius,transform;
   @extend %transition;
 
   @include mq(tablet) {
@@ -169,8 +169,9 @@ a {
   cursor: pointer;
 }
 .gallery__link--text{
+  display: inline-block;
   position: relative;
-  transition-property:box-shadow,border-radius,scale;
+  transition-property:box-shadow,border-radius,transform;
   @extend %transition;
   &:hover{
     
