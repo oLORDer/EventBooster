@@ -120,11 +120,13 @@ a {
   @include mq(tablet) {
     margin-bottom: 8px;
     font-size: 16px;
+
   }
   &:hover{
     box-shadow: 0 0 20px $main-color;
     border-radius: 8px;
     transform: scale(1.1);
+
   }
 }
 .gallery__txt {

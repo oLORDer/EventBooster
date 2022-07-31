@@ -6,10 +6,12 @@ export function ticketMarkup(el) {
     nameArtist = el.name.slice(0, 20) + '...';
   }
 
+
   if (!el._embedded.venues[0].name) {
     el._embedded.venues[0].name = haventPlace;
     console.log(el._embedded);
   }
+
 
   return `<li class= "gallery__item">
 
