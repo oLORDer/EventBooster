@@ -39,7 +39,6 @@ async function renderBaseMarkup() {
     const response = await ticketmasterAPI.fetchTickets();
     const baseMarkup = response._embedded.events
       .map(el => {
-        console.log(el);
         return ticketMarkup(el);
       })
       .join('');
