@@ -5,9 +5,16 @@ export function ticketMarkup(el) {
   if (el.name.length > 20) {
     nameArtist = el.name.slice(0, 20) + '...';
   }
+  // console.log(el._embedded);
 
   if (!el._embedded.venues[0].name) {
     el._embedded.venues[0].name = haventPlace;
+  }
+
+  if (!el._embedded.venues[0].location) {
+    el._embedded.venues[0].location = [{}];
+    el._embedded.venues[0].location.latitude = '';
+    el._embedded.venues[0].location.longitude = '';
   }
 
   return `<li class= "gallery__item">
