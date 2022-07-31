@@ -27,13 +27,14 @@ function paginal(totalObjects, numberImgPerPage, currentPage) {
   if (sum <= 5 && sum > 0) {
     list.innerHTML = btnsArr.join('');
   } else if (sum > 0) {
+
     if (currentPage >= len - 3) {
       list.innerHTML =
         btnsArr[0] +
         '...' +
         btnsArr[currentPage - 1] +
         btnsArr.slice(currentPage, currentPage + 3).join('');
-    } else if (currentPage > 4) {
+    } else if (currentPage > 1) {
       list.innerHTML =
         btnsArr[0] +
         '...' +
