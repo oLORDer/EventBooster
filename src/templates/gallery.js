@@ -16,7 +16,9 @@ export function ticketMarkup(el) {
       />
     <div class="gallery__wrap">
       <h2 class="gallery__title"> ${nameArtist}</h2>
+      <div>
       <p class="gallery__txt">${el.dates.start.localDate}</p>
+      </div>
     </div>
   </div>
 
