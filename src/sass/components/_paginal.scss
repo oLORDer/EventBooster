@@ -34,6 +34,11 @@
   align-items: baseline;
   gap: 20px;
   cursor: pointer;
+
+//Change mode LIGHT - DARK by operating system setting //
+  @media (prefers-color-scheme: light) {
+    color: black;
+  }
 }
 
 .paginal li {
