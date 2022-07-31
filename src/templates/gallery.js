@@ -7,6 +7,7 @@ export function ticketMarkup(el) {
   }
   // console.log(el._embedded);
 
+
   if (!el._embedded.venues[0].name) {
     el._embedded.venues[0].name = haventPlace;
   }
@@ -16,6 +17,7 @@ export function ticketMarkup(el) {
     el._embedded.venues[0].location.latitude = '';
     el._embedded.venues[0].location.longitude = '';
   }
+
 
   return `<li class= "gallery__item">
 
