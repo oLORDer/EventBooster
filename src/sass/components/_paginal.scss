@@ -1,33 +1,28 @@
 .act {
-  color: main-color;
-  border: 1px solid main-color;
+  color: $main-color;
+  border: 1px solid $main-color;
   border-radius: 10px 0px;
- animation: animate 1s linear ;
+  animation: animate 1s linear;
 }
-@keyframes animate{
-
+@keyframes animate {
   0% {
-    border:none
+    border: none;
   }
 
-  30%{
+  30% {
     border-bottom: 1px solid $main-color;
-    
-    
   }
-  50%{
-     border-right: 1px solid $main-color;
+  50% {
+    border-right: 1px solid $main-color;
   }
 
-  70%{
+  70% {
     border-top: 1px solid $main-color;
   }
 
-  100%{
+  100% {
     border: 1px solid $main-color;
   }
-
-
 }
 
 .paginal {
