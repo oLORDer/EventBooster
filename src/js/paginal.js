@@ -33,7 +33,7 @@ function paginal(totalObjects, numberImgPerPage, currentPage) {
         '...' +
         btnsArr[currentPage - 1] +
         btnsArr.slice(currentPage, currentPage + 3).join('');
-    } else if (currentPage > 4) {
+    } else if (currentPage > 1) {
       list.innerHTML =
         btnsArr[0] +
         '...' +
