@@ -164,6 +164,8 @@ a {
 }
 
 .js-target {
+  position: relative;
+  z-index: 1;
   cursor: pointer;
 }
 .gallery__link--text{
@@ -203,4 +205,8 @@ a {
   }
 
 }
+.flip-scale-down-diag-2{animation:flip-scale-down-diag-2 1s linear both}
+
+
+@keyframes flip-scale-down-diag-2{0%{transform:scale(1) rotate3d(-1,1,0,0deg)}50%{transform:scale(.4) rotate3d(-1,1,0,0deg)}100%{transform:scale(1) rotate3d(-1,1,0,360deg)}}
 
