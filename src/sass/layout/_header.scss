@@ -209,12 +209,12 @@ label{
 .search-input:hover ~ .search-input__button  > .search-input__icon,
 .search-input:focus ~ .search-input__button  > .search-input__icon {
 
-  fill: #DC56C5;
+  fill: $main-color;
   width: 20px;
   height: 20px;
 }
 .search-input:hover ,.search-input:focus{
-  box-shadow: 0 0 20px #DC56C5;
+  box-shadow: 0 0 20px $main-color;
 
 }
 .search-input__button {
@@ -237,7 +237,7 @@ label{
 
 }
 .search-input__icon:hover{
-  fill: #DC56C5;
+  fill: $main-color;
   width: 20px;
   height: 20px;
 }
@@ -363,7 +363,7 @@ label{
 }
 
 .selected:hover,.selected:focus{
-  box-shadow: 0 0 20px #DC56C5;
+  box-shadow: 0 0 20px $main-color;
 }
  .selected:hover::after{
   background: url("../images/select-pink.svg");
@@ -426,7 +426,7 @@ cursor: pointer;
 }
 
 .select-box .option:hover{
-  background-color: #DC56C5;
+  background-color: $main-color;
 }
 
 .select-box label{
