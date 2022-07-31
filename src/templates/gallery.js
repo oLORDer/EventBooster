@@ -8,7 +8,7 @@ export function ticketMarkup(el) {
 
   return `<li class= "gallery__item">
 
-  <div class="js-target" data-id="${el.id}">
+  <div class="js-target flip-scale-down-diag-2" data-id="${el.id}">
     <img
       class="gallery__img"
         src="${el.images[1].url}"
