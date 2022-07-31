@@ -83,7 +83,7 @@
 .modal__close-icon {
   &:hover,
   :focus {
-    fill: rgba(76, 0, 254, 1);
+    fill: #dc56c5;
   }
 
   @include mq(desktop) {
