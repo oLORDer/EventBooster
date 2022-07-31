@@ -19,14 +19,14 @@ body.light .gallery__link--text::before{
 body.light .footer__link:hover .footer__text{
   padding-left: 5px;
   padding-right: 5px;
-  box-shadow: 0 0 20px #DC56C5;
+  box-shadow: 0 0 20px $main-color;
   border-radius: 10px;
   background-color: #000000;
 }
 body.light .footer__link:focus .footer__text{
   padding-left: 5px;
   padding-right: 5px;
-  box-shadow: 0 0 20px #DC56C5;
+  box-shadow: 0 0 20px $main-color;
   border-radius: 10px;
   background-color: #000000;
 }
@@ -35,6 +35,49 @@ body.light .scroll{
   border-radius: 100%;
   width: 29px;
   height: 29px;
+}
+
+body.light .header {
+  background-image: url('../images/header/bg-wh.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.light .gallery__item::after {
+  border: 1px solid $white-theme-main;
+}
+body.light .gallery__title{
+  color:$white-theme-main;
+}
+body.light .header__title{
+  color: $white-theme-main;
+}
+
+body.light .footer__text{
+  color: $white-theme-main;
+ &:hover,&:focus{
+  color: white;
+ }
+}
+
+body.light .input{
+  background: $white-theme-main;
+  color: $main-color;
+}
+body.light .search-input::placeholder{
+  color: $main-color;
+}
+body.light .search-input{
+  color: $main-color;
+}
+body.light .select-box .options-container{
+  background: $white-theme-main;
+}
+
+body.light .selected{
+  background: $white-theme-main;
+  color: $main-color;
 }
 
 
