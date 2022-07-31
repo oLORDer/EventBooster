@@ -12,7 +12,7 @@ body.light .gallery__icon{
 }
 body.light .gallery__link--text::before{
   background: url("../images/vector-light.svg");
-  
+
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -57,6 +57,7 @@ body.light .scroll{
   width: 20px;
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
+
   @include mq(tablet) {
     height: 35px;
     width: 35px;
@@ -85,6 +86,7 @@ body.light .scroll{
   width: 20px;
   top: 60px;
   right: 70px;
+
   @include mq(tablet) {
     height: 35px;
     width: 35px;

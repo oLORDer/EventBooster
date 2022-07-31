@@ -21,7 +21,6 @@ async function renderModalCard(e) {
       e.target.parentElement.dataset.id ||
         e.target.parentElement.parentElement.dataset.id
     );
-    console.log(response);
 
     modalEl.classList.remove('visually-hidden');
     modalEl.innerHTML = ticketModal(response);

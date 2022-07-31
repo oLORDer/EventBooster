@@ -8,7 +8,6 @@ export function ticketMarkup(el) {
 
   if (!el._embedded.venues[0].name) {
     el._embedded.venues[0].name = haventPlace;
-    console.log(el._embedded);
   }
 
   return `<li class= "gallery__item">
