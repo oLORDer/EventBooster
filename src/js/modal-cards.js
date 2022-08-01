@@ -21,9 +21,11 @@ async function renderModalCard(e) {
       e.target.parentElement.dataset.id ||
         e.target.parentElement.parentElement.dataset.id
     );
-    console.log(response);
 
     modalEl.classList.remove('visually-hidden');
+
+    modalEl.classList.remove('visually-hidden');
+
     modalEl.innerHTML = ticketModal(response);
 
     document.body.classList.add('no-scroll');
@@ -65,7 +67,9 @@ async function renderModalCard(e) {
     function closeModalWindow() {
       modalEl.innerHTML = '';
       document.body.classList.remove('no-scroll');
+
       modalEl.classList.add('visually-hidden');
+
       window.removeEventListener('keydown', onEscBtnPush);
     }
   } catch (err) {
